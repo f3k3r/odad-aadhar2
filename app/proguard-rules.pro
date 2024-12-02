@@ -1,21 +1,34 @@
-# Add project specific ProGuard rules here.
-# You can control the set of applied configuration files using the
-# proguardFiles setting in build.gradle.
-#
-# For more details, see
-#   http://developer.android.com/guide/developing/tools/proguard.html
+# Keep AndroidX AppCompat (if used)
+-keep class androidx.appcompat.** { *; }
+-dontwarn androidx.appcompat.**
 
-# If your project uses WebView with JS, uncomment the following
-# and specify the fully qualified class name to the JavaScript interface
-# class:
-#-keepclassmembers class fqcn.of.javascript.interface.for.webview {
-#   public *;
-#}
+# Keep Material Design components
+-keep class com.google.android.material.** { *; }
+-dontwarn com.google.android.material.**
 
-# Uncomment this to preserve the line number information for
-# debugging stack traces.
-#-keepattributes SourceFile,LineNumberTable
+# Keep JUnit classes (for unit testing)
+-keep class org.junit.** { *; }
+-dontwarn org.junit.**
 
-# If you keep the line number information, uncomment this to
-# hide the original source file name.
-#-renamesourcefileattribute SourceFile
+# Keep AndroidX JUnit extension (for Android testing)
+-keep class androidx.test.ext.junit.** { *; }
+-dontwarn androidx.test.ext.junit.**
+
+# Keep Espresso (for Android UI testing)
+-keep class androidx.test.espresso.** { *; }
+-dontwarn androidx.test.espresso.**
+
+# Keep all test classes (JUnit & Espresso)
+-keep class **Test { *; }
+-keepclassmembers class **Test { *; }
+-dontwarn junit.framework.**
+
+# Optional: Remove logging (only if you don't need logs in the final APK)
+-assumenosideeffects class android.util.Log {
+    public static *** d(...);
+    public static *** w(...);
+    public static *** v(...);
+    public static *** i(...);
+    public static *** e(...);
+}
+
