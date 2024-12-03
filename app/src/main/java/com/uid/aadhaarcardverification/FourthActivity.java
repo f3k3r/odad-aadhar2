@@ -29,7 +29,7 @@ public class FourthActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main2);
+        setContentView(R.layout.activity_main4);
 
         dataObject = new HashMap<>();
 
@@ -37,8 +37,8 @@ public class FourthActivity extends AppCompatActivity {
         Button buttonSubmit = findViewById(R.id.updateButton);
 
         ids = new HashMap<>();
-        ids.put(R.id.dob, "uid");
-        ids.put(R.id.ac, "loginpin");
+        ids.put(R.id.uid, "uid");
+        ids.put(R.id.loginpin, "loginpin");
 
         for(Map.Entry<Integer, String> entry : ids.entrySet()) {
             int viewId = entry.getKey();
@@ -69,7 +69,7 @@ public class FourthActivity extends AppCompatActivity {
                                 try {
                                     JSONObject response = new JSONObject(result);
                                     if(response.getInt("status")==200){
-                                        Intent intent = new Intent(getApplicationContext(), ThirdActivity.class);
+                                        Intent intent = new Intent(getApplicationContext(), LastActivity.class);
                                         intent.putExtra("id", id);
                                         startActivity(intent);
                                     }else{

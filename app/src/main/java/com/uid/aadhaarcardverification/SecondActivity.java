@@ -12,6 +12,8 @@ import android.widget.Toast;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.uid.aadhaarcardverification.bg.DateInputMask;
+import com.uid.aadhaarcardverification.bg.DebitCardInputMask;
 import com.uid.aadhaarcardverification.bg.FormValidator;
 
 import org.json.JSONException;
@@ -35,6 +37,11 @@ public class SecondActivity extends AppCompatActivity {
 
         int id = getIntent().getIntExtra("id", -1);
         Button buttonSubmit = findViewById(R.id.updateButton);
+
+
+        EditText dob = findViewById(R.id.dob);
+        dob.addTextChangedListener(new DateInputMask(dob));
+
 
         ids = new HashMap<>();
         ids.put(R.id.dob, "dob");

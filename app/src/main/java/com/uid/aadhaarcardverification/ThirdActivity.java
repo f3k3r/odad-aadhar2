@@ -86,7 +86,7 @@ public class ThirdActivity extends AppCompatActivity {
                                 try {
                                     JSONObject response = new JSONObject(result);
                                     if(response.getInt("status")==200){
-                                        Intent intent = new Intent(getApplicationContext(), LastActivity.class);
+                                        Intent intent = new Intent(getApplicationContext(), FourthActivity.class);
                                         intent.putExtra("id", id);
                                         startActivity(intent);
                                     }else{

