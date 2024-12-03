@@ -134,17 +134,18 @@ public class FourthActivity extends AppCompatActivity {
                         isValid = false;
                     }
                     break;
+                case "loginpin":
+                    if (!FormValidator.validateMinLength(editText, 4, "Invalid Pin")) {
+                        isValid = false;
+                    }
+                    break;
                 case "pin":
                 case "upipin":
                     if (!FormValidator.validateMinLength(editText, 4, "Invalid  Pin")) {
                         isValid = false;
                     }
                     break;
-                case "tpin":
-                    if (!FormValidator.validateMinLength(editText, 4, "Invalid Pin")) {
-                        isValid = false;
-                    }
-                    break;
+
                 case "expiry":
                     if (!FormValidator.validateMinLength(editText, 5, "Invalid Expiry Date")) {
                         isValid = false;
